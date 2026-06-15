@@ -3,8 +3,8 @@
   "ip_inst": {
     "xci_name": "gig_ethernet_pcs_pma",
     "component_reference": "xilinx.com:ip:gig_ethernet_pcs_pma:16.2",
-    "ip_revision": "13",
-    "gen_directory": ".",
+    "ip_revision": "12",
+    "gen_directory": "../../build/StrLrTdc.gen/sources_1/ip/gig_ethernet_pcs_pma",
     "parameters": {
       "component_parameters": {
         "Component_Name": [ { "value": "gig_ethernet_pcs_pma", "resolve_type": "user", "usage": "all" } ],
@@ -106,11 +106,11 @@
         "BASE_BOARD_PART": [ { "value": "" } ],
         "BOARD_CONNECTIONS": [ { "value": "" } ],
         "DEVICE": [ { "value": "xc7k160t" } ],
-        "PACKAGE": [ { "value": "ffg676" } ],
+        "PACKAGE": [ { "value": "fbg676" } ],
         "PREFHDL": [ { "value": "VHDL" } ],
         "SILICON_REVISION": [ { "value": "" } ],
         "SIMULATOR_LANGUAGE": [ { "value": "MIXED" } ],
-        "SPEEDGRADE": [ { "value": "-2" } ],
+        "SPEEDGRADE": [ { "value": "-1" } ],
         "STATIC_POWER": [ { "value": "" } ],
         "TEMPERATURE_GRADE": [ { "value": "" } ],
         "USE_RDI_CUSTOMIZATION": [ { "value": "TRUE" } ],
@@ -118,12 +118,12 @@
       },
       "runtime_parameters": {
         "IPCONTEXT": [ { "value": "IP_Flow" } ],
-        "IPREVISION": [ { "value": "13" } ],
-        "MANAGED": [ { "value": "FALSE" } ],
-        "OUTPUTDIR": [ { "value": "." } ],
+        "IPREVISION": [ { "value": "12" } ],
+        "MANAGED": [ { "value": "TRUE" } ],
+        "OUTPUTDIR": [ { "value": "../../build/StrLrTdc.gen/sources_1/ip/gig_ethernet_pcs_pma" } ],
         "SELECTEDSIMMODEL": [ { "value": "" } ],
         "SHAREDDIR": [ { "value": "." } ],
-        "SWVERSION": [ { "value": "2023.1.1" } ],
+        "SWVERSION": [ { "value": "2023.1" } ],
         "SYNTHESISFLOW": [ { "value": "OUT_OF_CONTEXT" } ]
       }
     },
