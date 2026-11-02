@@ -5,8 +5,6 @@
 # System ---------------------------------------------------------------
 set_property PACKAGE_PIN A17 [get_ports PROGB_ON]
 set_property PACKAGE_PIN E18 [get_ports CLKOSC]
-#set_property PACKAGE_PIN F22 [get_ports BASE_CLKP]
-#set_property PACKAGE_PIN E23 [get_ports BASE_CLKN]
 set_property PACKAGE_PIN G26 [get_ports USR_RSTB]
 set_property PACKAGE_PIN A8 [get_ports {LED[1]}]
 set_property PACKAGE_PIN B9 [get_ports {LED[2]}]
@@ -23,45 +21,34 @@ set_property PACKAGE_PIN E10 [get_ports {DIP[8]}]
 set_property PACKAGE_PIN N12 [get_ports VP]
 set_property PACKAGE_PIN P11 [get_ports VN]
 
-# GTX ------------------------------------------------------------------
-# Need to modify
-# set_property PACKAGE_PIN D6 [get_ports GTX_REFCLK_P]
-# set_property PACKAGE_PIN D5 [get_ports GTX_REFCLK_N]
-
 # SPI flash ------------------------------------------------------------
-# Need to modify
 set_property PACKAGE_PIN B24 [get_ports MOSI]
 set_property PACKAGE_PIN A25 [get_ports DIN]
 set_property PACKAGE_PIN C23 [get_ports FCSB]
 
 # MIKUMARI connector ---------------------------------------------------
-# TODO : Adjust to mezzanine : done
 # StrHUL
 set_property PACKAGE_PIN AA10 [get_ports MIKUMARI_RXP]
 set_property PACKAGE_PIN AB10 [get_ports MIKUMARI_RXN]
 set_property PACKAGE_PIN AA13 [get_ports MIKUMARI_TXP]
 set_property PACKAGE_PIN AA12 [get_ports MIKUMARI_TXN]
 
-# Remaining pins for MIKUMARI
-# set_property PACKAGE_PIN Y15  [get_ports MIKUMARI_RXP1]
-# set_property PACKAGE_PIN Y16  [get_ports MIKUMARI_RXN1]
-# set_property PACKAGE_PIN AB15 [get_ports MIKUMARI_TXP1]
-# set_property PACKAGE_PIN AB14 [get_ports MIKUMARI_TXN1]
+# Mikumari Daisy Chain
+set_property PACKAGE_PIN Y15  [get_ports CDCM_RXP[0]]
+set_property PACKAGE_PIN Y16  [get_ports CDCM_RXN[0]]
+set_property PACKAGE_PIN AB14 [get_ports CDCM_TXP[0]]
+set_property PACKAGE_PIN AB15 [get_ports CDCM_TXN[0]]
 
-# set_property PACKAGE_PIN AA19 [get_ports MIKUMARI_RXP0]
-# set_property PACKAGE_PIN AA20 [get_ports MIKUMARI_RXN0]
-# set_property PACKAGE_PIN AA18 [get_ports MIKUMARI_TXP0]
-# set_property PACKAGE_PIN AA17 [get_ports MIKUMARI_TXN0]
+set_property PACKAGE_PIN AA19 [get_ports CDCM_RXP[1]]
+set_property PACKAGE_PIN AA20 [get_ports CDCM_RXN[1]]
+set_property PACKAGE_PIN AA17 [get_ports CDCM_TXP[1]]
+set_property PACKAGE_PIN AA18 [get_ports CDCM_TXN[1]]
 
 # EEPROM ---------------------------------------------------------------
 set_property PACKAGE_PIN D15 [get_ports EEP_CS]
 set_property PACKAGE_PIN B16 [get_ports EEP_SK]
 set_property PACKAGE_PIN C16 [get_ports EEP_DI]
 set_property PACKAGE_PIN D16 [get_ports EEP_DO]
-#set_property PACKAGE_PIN D23 [get_ports {EEP_CS[2]}]
-#set_property PACKAGE_PIN C24 [get_ports {EEP_SK[2]}]
-#set_property PACKAGE_PIN D24 [get_ports {EEP_DI[2]}]
-#set_property PACKAGE_PIN D25 [get_ports {EEP_DO[2]}]
 
 # NIM-IO ---------------------------------------------------------------
 set_property PACKAGE_PIN J24 [get_ports {NIM_IN[1]}]
@@ -72,21 +59,6 @@ set_property PACKAGE_PIN H24 [get_ports {NIM_OUT[1]}]
 set_property PACKAGE_PIN H26 [get_ports {NIM_OUT[2]}]
 set_property PACKAGE_PIN G24 [get_ports {NIM_OUT[3]}]
 set_property PACKAGE_PIN G25 [get_ports {NIM_OUT[4]}]
-
-# JItter cleaner -------------------------------------------------------
-#set_property PACKAGE_PIN AC14 [get_ports CDCE_PDB]
-#set_property PACKAGE_PIN AB15 [get_ports CDCE_LOCK]
-#set_property PACKAGE_PIN AD14 [get_ports CDCE_SCLK]
-#set_property PACKAGE_PIN AB14 [get_ports CDCE_SO]
-#set_property PACKAGE_PIN AA17 [get_ports CDCE_SI]
-#set_property PACKAGE_PIN AA18 [get_ports CDCE_LE]
-#set_property PACKAGE_PIN AD15 [get_ports CDCE_REFP]
-#set_property PACKAGE_PIN AE15 [get_ports CDCE_REFN]
-#set_property PACKAGE_PIN AA10 [get_ports CLK_FASTP]
-#set_property PACKAGE_PIN AB10 [get_ports CLK_FASTN]
-#set_property PACKAGE_PIN AB11 [get_ports CLK_SLOWP]
-#set_property PACKAGE_PIN AC11 [get_ports CLK_SLOWN]
-
 
 # Main port ------------------------------------------------------------
 # Up port --
@@ -280,17 +252,6 @@ set_property PACKAGE_PIN U24 [get_ports {MAIN_IN_D[31]}]
 # set_property PACKAGE_PIN AD20 [get_ports {MZN_Dp[31]}]
 # set_property PACKAGE_PIN AE20 [get_ports {MZN_Dn[31]}]
 
-##Remaining pins for MIKUMARI
-# set_property PACKAGE_PIN AB14 [get_ports {MZN_Dp[6]}]
-# set_property PACKAGE_PIN AB15 [get_ports {MZN_Dn[6]}]
-# set_property PACKAGE_PIN Y15 [get_ports {MZN_Dp[7]}]
-# set_property PACKAGE_PIN Y16 [get_ports {MZN_Dn[7]}]
-
-# set_property PACKAGE_PIN AA17 [get_ports {MZN_Dp[9]}]
-# set_property PACKAGE_PIN AA18 [get_ports {MZN_Dn[9]}]
-# set_property PACKAGE_PIN AA19 [get_ports {MZN_Dp[10]}]
-# set_property PACKAGE_PIN AA20 [get_ports {MZN_Dn[10]}]
-
 # PHY -- Copy from HUL pin.xdc
 set_property PACKAGE_PIN E26 [get_ports PHY_MDIO]
 set_property PACKAGE_PIN D25 [get_ports PHY_MDC]
@@ -333,9 +294,6 @@ set_property PACKAGE_PIN D21 [get_ports PHY_COL]
 # System ---------------------------------------------------------------
 set_property IOSTANDARD LVCMOS33 [get_ports PROGB_ON]
 set_property IOSTANDARD LVCMOS33 [get_ports CLKOSC]
-#set_property IOSTANDARD LVDS_25 [get_ports BASE_CLKP]
-#set_property DIFF_TERM TRUE [get_ports BASE_CLKP]
-#set_property DIFF_TERM TRUE [get_ports BASE_CLKN]
 set_property IOSTANDARD LVCMOS33 [get_ports USR_RSTB]
 set_property IOSTANDARD LVCMOS33 [get_ports {LED[*]}]
 set_property IOSTANDARD LVCMOS33 [get_ports {DIP[*]}]
@@ -357,11 +315,15 @@ set_property IOSTANDARD LVCMOS33 [get_ports FCSB]
 set_property IOB TRUE [get_ports FCSB]
 
 # EXBASE connector -----------------------------------------------------
-# TODO : Adjust to mezzanine : done
 # StrHUL
 set_property IOSTANDARD LVDS [get_ports MIKUMARI_TXP]
 set_property IOSTANDARD LVDS [get_ports MIKUMARI_RXP]
 set_property DIFF_TERM TRUE [get_ports MIKUMARI_RXP]
+
+# Mikumari Daisy Chain
+set_property IOSTANDARD LVDS [get_ports CDCM_RXP[*]]
+set_property IOSTANDARD LVDS [get_ports CDCM_TXP[*]]
+set_property DIFF_TERM TRUE [get_ports CDCM_RXP[*]]
 
 # EEPROM ---------------------------------------------------------------
 set_property IOSTANDARD LVCMOS33 [get_ports EEP_CS]
@@ -373,21 +335,6 @@ set_property IOSTANDARD LVCMOS33 [get_ports EEP_DO]
 set_property IOSTANDARD LVCMOS33 [get_ports {NIM_IN[*]}]
 set_property IOSTANDARD LVCMOS33 [get_ports {NIM_OUT[*]}]
 #set_property IOB TRUE [get_ports NIM_OUT[*]]
-
-# JItter cleaner -------------------------------------------------------
-#set_property IOSTANDARD LVCMOS18 [get_ports CDCE_PDB]
-#set_property IOSTANDARD LVCMOS18 [get_ports CDCE_LOCK]
-#set_property IOSTANDARD LVCMOS18 [get_ports CDCE_SCLK]
-#set_property IOSTANDARD LVCMOS18 [get_ports CDCE_SO]
-#set_property IOSTANDARD LVCMOS18 [get_ports CDCE_SI]
-#set_property IOSTANDARD LVCMOS18 [get_ports CDCE_LE]
-#set_property IOSTANDARD LVDS [get_ports CDCE_REFP]
-#set_property IOSTANDARD LVDS [get_ports CDCE_REFN]
-#
-#set_property IOSTANDARD LVDS [get_ports CLK_FASTP]
-#set_property IOSTANDARD LVDS [get_ports CLK_FASTN]
-#set_property IOSTANDARD LVDS [get_ports CLK_SLOWP]
-#set_property IOSTANDARD LVDS [get_ports CLK_SLOWN]
 
 # Main port ------------------------------------------------------------
 # Up port --

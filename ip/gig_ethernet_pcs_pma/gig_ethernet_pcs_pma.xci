@@ -4,7 +4,7 @@
     "xci_name": "gig_ethernet_pcs_pma",
     "component_reference": "xilinx.com:ip:gig_ethernet_pcs_pma:16.2",
     "ip_revision": "12",
-    "gen_directory": "../../build/StrLrTdc.gen/sources_1/ip/gig_ethernet_pcs_pma",
+    "gen_directory": ".",
     "parameters": {
       "component_parameters": {
         "Component_Name": [ { "value": "gig_ethernet_pcs_pma", "resolve_type": "user", "usage": "all" } ],
@@ -119,8 +119,9 @@
       "runtime_parameters": {
         "IPCONTEXT": [ { "value": "IP_Flow" } ],
         "IPREVISION": [ { "value": "12" } ],
+        "LOCKEDBYUSER": [ { "value": "TRUE" } ],
         "MANAGED": [ { "value": "TRUE" } ],
-        "OUTPUTDIR": [ { "value": "../../build/StrLrTdc.gen/sources_1/ip/gig_ethernet_pcs_pma" } ],
+        "OUTPUTDIR": [ { "value": "." } ],
         "SELECTEDSIMMODEL": [ { "value": "" } ],
         "SHAREDDIR": [ { "value": "." } ],
         "SWVERSION": [ { "value": "2023.1" } ],

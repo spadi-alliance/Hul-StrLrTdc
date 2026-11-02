@@ -13,10 +13,10 @@
 
 #set_property LOC GTXE2_CHANNEL_X0Y7 [get_cells */*/*/transceiver_inst/gtwizard_inst/*/gtwizard_i/gt0_GTWIZARD_i/gtxe2_i]
 
-set_property PACKAGE_PIN G3 [get_ports {GTX_RX_N[1]}]
-set_property PACKAGE_PIN G4 [get_ports {GTX_RX_P[1]}]
-set_property PACKAGE_PIN F1 [get_ports {GTX_TX_N[1]}]
-set_property PACKAGE_PIN F2 [get_ports {GTX_TX_P[1]}]
+# set_property PACKAGE_PIN G3 [get_ports {GTX_RX_N[1]}]
+# set_property PACKAGE_PIN G4 [get_ports {GTX_RX_P[1]}]
+# set_property PACKAGE_PIN F1 [get_ports {GTX_TX_N[1]}]
+# set_property PACKAGE_PIN F2 [get_ports {GTX_TX_P[1]}]
 
 #set_property PACKAGE_PIN E3 [get_ports {GTX_RX_N[2]}]
 #set_property PACKAGE_PIN E4 [get_ports {GTX_RX_P[2]}]
@@ -36,7 +36,7 @@ set_property PACKAGE_PIN F2 [get_ports {GTX_TX_P[1]}]
 #-----------------------------------------------------------
 
 #create_clock -add -name gtrefclk -period 8.000 [get_ports GTX_REFCLK_P]
-create_clock -period 6.400 -name gtrefclk -add [get_ports GTX_REFCLK_P]
+# create_clock -period 6.400 -name gtrefclk -add [get_ports GTX_REFCLK_P]
 
 
 #-----------------------------------------------------------
@@ -159,18 +159,18 @@ create_clock -period 6.400 -name gtrefclk -add [get_ports GTX_REFCLK_P]
 #-----------------------------------------------------------
 
 # Control Gray Code delay and skew across clock boundary
-set_false_path -to [get_pins -of [get_cells -hierarchical -filter {NAME =~ *tx_elastic_buffer_inst/reclock_rd_addrgray*/data_sync*}] -filter {REF_PIN_NAME =~ D}]
-set_false_path -to [get_pins -of [get_cells -hierarchical -filter {NAME =~ *tx_elastic_buffer_inst/reclock_wr_addrgray*/data_sync*}] -filter {REF_PIN_NAME =~ D}]
+# set_false_path -to [get_pins -of [get_cells -hierarchical -filter {NAME =~ *tx_elastic_buffer_inst/reclock_rd_addrgray*/data_sync*}] -filter {REF_PIN_NAME =~ D}]
+# set_false_path -to [get_pins -of [get_cells -hierarchical -filter {NAME =~ *tx_elastic_buffer_inst/reclock_wr_addrgray*/data_sync*}] -filter {REF_PIN_NAME =~ D}]
 
 # Constrain between Distributed Memory (output data) and the 1st set of flip-flops
-set_false_path -from [get_clocks clk_gmii1] -to [get_pins -of [get_cells -hierarchical -filter {NAME =~ *tx_elastic_buffer_inst/tx_en_fifo_reg1*}] -filter {REF_PIN_NAME =~ D}]
-set_false_path -from [get_clocks clk_gmii1] -to [get_pins -of [get_cells -hierarchical -filter {NAME =~ *tx_elastic_buffer_inst/tx_er_fifo_reg1*}] -filter {REF_PIN_NAME =~ D}]
-set_false_path -from [get_clocks clk_gmii1] -to [get_pins -of [get_cells -hierarchical -filter {NAME =~ *tx_elastic_buffer_inst/txd_fifo_reg1*}] -filter {REF_PIN_NAME =~ D}]
+# set_false_path -from [get_clocks clk_gmii1] -to [get_pins -of [get_cells -hierarchical -filter {NAME =~ *tx_elastic_buffer_inst/tx_en_fifo_reg1*}] -filter {REF_PIN_NAME =~ D}]
+# set_false_path -from [get_clocks clk_gmii1] -to [get_pins -of [get_cells -hierarchical -filter {NAME =~ *tx_elastic_buffer_inst/tx_er_fifo_reg1*}] -filter {REF_PIN_NAME =~ D}]
+# set_false_path -from [get_clocks clk_gmii1] -to [get_pins -of [get_cells -hierarchical -filter {NAME =~ *tx_elastic_buffer_inst/txd_fifo_reg1*}] -filter {REF_PIN_NAME =~ D}]
 
 set_false_path -to [get_pins -of [get_cells -hierarchical -filter {NAME =~ *reset_sync*}] -filter {REF_PIN_NAME =~ PRE}]
 
-set_false_path -to [get_pins -of [get_cells -hierarchical -filter {NAME =~ */core_resets_i/pma_reset_pipe_reg*}] -filter {REF_PIN_NAME =~ PRE}]
-set_false_path -to [get_pins -of [get_cells -hierarchical -filter {NAME =~ */core_resets_i/pma_reset_pipe*[0]}] -filter {REF_PIN_NAME =~ D}]
+# set_false_path -to [get_pins -of [get_cells -hierarchical -filter {NAME =~ */core_resets_i/pma_reset_pipe_reg*}] -filter {REF_PIN_NAME =~ PRE}]
+# set_false_path -to [get_pins -of [get_cells -hierarchical -filter {NAME =~ */core_resets_i/pma_reset_pipe*[0]}] -filter {REF_PIN_NAME =~ D}]
 
 
 
